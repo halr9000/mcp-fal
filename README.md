@@ -82,4 +82,4 @@ python main.py
 
 ## License
 
-MIT
+[MIT](LICENSE)
