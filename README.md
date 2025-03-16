@@ -24,8 +24,8 @@ A Model Context Protocol (MCP) server for interacting with fal.ai models and ser
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/am0y/fal-mcp.git
-cd fal-mcp
+git clone https://github.com/am0y/mcp-fal.git
+cd mcp-fal
 ```
 
 2. Install the required packages:
