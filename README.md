@@ -17,6 +17,7 @@ A Model Context Protocol (MCP) server for interacting with fal.ai models and ser
 - Python 3.10+
 - fastmcp
 - httpx
+- aiofiles
 - A fal.ai API key
 
 ## Installation
@@ -29,7 +30,7 @@ cd fal-mcp
 
 2. Install the required packages:
 ```bash
-pip install fastmcp httpx
+pip install fastmcp httpx aiofiles
 ```
 
 3. Set your fal.ai API key as an environment variable:
