@@ -15,12 +15,28 @@ A Model Context Protocol (MCP) server for interacting with fal.ai models and ser
 ## Requirements
 
 - Python 3.10+
-- fastmcp
-- httpx
-- aiofiles
 - A fal.ai API key
 
 ## Installation
+
+### Using uvx (Recommended)
+
+The easiest way to use this MCP server is with `uvx`, which handles all dependencies automatically:
+
+```bash
+# Set your fal.ai API key
+export FAL_KEY="YOUR_FAL_API_KEY_HERE"
+
+# Run directly with uvx (from GitHub)
+uvx --from git+https://github.com/am0y/mcp-fal.git --with fastmcp --with httpx --with aiofiles python main.py
+
+# Or clone and run locally
+git clone https://github.com/am0y/mcp-fal.git
+cd mcp-fal
+uvx --from . --with fastmcp --with httpx --with aiofiles python main.py
+```
+
+### Traditional Installation
 
 1. Clone this repository:
 ```bash
@@ -28,9 +44,9 @@ git clone https://github.com/am0y/mcp-fal.git
 cd mcp-fal
 ```
 
-2. Install the required packages:
+2. Install the package:
 ```bash
-pip install fastmcp httpx aiofiles
+pip install -e .
 ```
 
 3. Set your fal.ai API key as an environment variable:
@@ -40,7 +56,31 @@ export FAL_KEY="YOUR_FAL_API_KEY_HERE"
 
 ## Usage
 
-### Running the Server
+### Using with uvx in MCP Configuration
+
+Add this to your MCP client configuration (e.g., Claude Desktop):
+
+```json
+{
+  "mcpServers": {
+    "fal-ai": {
+      "command": "uvx",
+      "args": [
+        "--from", "git+https://github.com/am0y/mcp-fal.git",
+        "--with", "fastmcp",
+        "--with", "httpx",
+        "--with", "aiofiles",
+        "python", "main.py"
+      ],
+      "env": {
+        "FAL_KEY": "YOUR_FAL_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
+
+### Development Mode
 
 You can run the server in development mode with:
 
@@ -50,15 +90,13 @@ fastmcp dev main.py
 
 This will launch the MCP Inspector web interface where you can test the tools interactively.
 
-### Installing in Claude Desktop
+### Installing in Claude Desktop with FastMCP
 
-To use the server with Claude Desktop:
+To use the server with Claude Desktop using FastMCP:
 
 ```bash
-fastmcp install main.py -e FAL_KEY="YOUR_FAL_API_KEY_HERE"
+fastmcp install claude-desktop main.py --env FAL_KEY="YOUR_FAL_API_KEY_HERE"
 ```
-
-This will make the server available to Claude in the Desktop app.
 
 ### Running Directly
 

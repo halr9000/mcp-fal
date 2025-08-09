@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "fal-ai": {
+      "command": "uvx",
+      "args": [
+        "--from", "git+https://github.com/am0y/mcp-fal.git",
+        "--with", "fastmcp",
+        "--with", "httpx",
+        "--with", "aiofiles",
+        "python", "main.py"
+      ],
+      "env": {
+        "FAL_KEY": "YOUR_FAL_API_KEY_HERE"
+      }
+    }
+  }
+}
