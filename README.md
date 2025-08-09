@@ -28,10 +28,10 @@ The easiest way to use this MCP server is with `uvx`, which handles all dependen
 export FAL_KEY="YOUR_FAL_API_KEY_HERE"
 
 # Run directly with uvx (from GitHub)
-uvx --from git+https://github.com/am0y/mcp-fal.git --with fastmcp --with httpx --with aiofiles python main.py
+uvx --from git+https://github.com/halr9000/mcp-fal.git --with fastmcp --with httpx --with aiofiles python main.py
 
 # Or clone and run locally
-git clone https://github.com/am0y/mcp-fal.git
+git clone https://github.com/halr9000/mcp-fal.git
 cd mcp-fal
 uvx --from . --with fastmcp --with httpx --with aiofiles python main.py
 ```
@@ -39,17 +39,20 @@ uvx --from . --with fastmcp --with httpx --with aiofiles python main.py
 ### Traditional Installation
 
 1. Clone this repository:
+
 ```bash
-git clone https://github.com/am0y/mcp-fal.git
+git clone https://github.com/halr9000/mcp-fal.git
 cd mcp-fal
 ```
 
 2. Install the package:
+
 ```bash
 pip install -e .
 ```
 
 3. Set your fal.ai API key as an environment variable:
+
 ```bash
 export FAL_KEY="YOUR_FAL_API_KEY_HERE"
 ```
@@ -66,7 +69,7 @@ Add this to your MCP client configuration (e.g., Claude Desktop):
     "fal-ai": {
       "command": "uvx",
       "args": [
-        "--from", "git+https://github.com/am0y/mcp-fal.git",
+        "--from", "git+https://github.com/halr9000/mcp-fal.git",
         "--with", "fastmcp",
         "--with", "httpx",
         "--with", "aiofiles",

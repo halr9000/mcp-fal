@@ -44,4 +44,4 @@ Issues = "https://github.com/am0y/mcp-fal/issues"
 fal-ai-mcp-server = "main:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["fal_ai_mcp_server"]
+packages = ["."]
