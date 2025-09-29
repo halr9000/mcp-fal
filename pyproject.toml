@@ -26,17 +26,7 @@ dependencies = [
 
 [project.scripts]
 # Console entrypoint for running the server
-mcp-fal = "main:main"
+mcp-fal = "mcp_fal.main:main"
 
-[tool.uv]
-# Optional: declare dev dependencies and settings here
-# dev-dependencies = ["ruff", "pytest"]
-
-[tool.uv.scripts]
-# Helpful script aliases for development and running
-# Launch MCP Inspector with hot reload using fastmcp
-inspect = "fastmcp dev main.py"
-# Install into Claude Desktop (example, ensures env var can be passed)
-install-claude = "fastmcp install main.py"
-# Run via the console script entrypoint
-run = "mcp-fal"
+[tool.hatch.build.targets.wheel]
+packages = ["mcp_fal"]

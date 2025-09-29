@@ -8,17 +8,12 @@ providing tools to interact with fal.ai models and services.
 import os
 import sys
 from fastmcp import FastMCP
-from api.models import register_model_tools
-from api.generate import register_generation_tools
-from api.storage import register_storage_tools
-from api.config import get_api_key, SERVER_NAME, SERVER_DESCRIPTION, SERVER_VERSION, SERVER_DEPENDENCIES
+from .api.models import register_model_tools
+from .api.generate import register_generation_tools
+from .api.storage import register_storage_tools
+from .api.config import get_api_key, SERVER_NAME, SERVER_DESCRIPTION, SERVER_VERSION, SERVER_DEPENDENCIES
 
-mcp = FastMCP(
-    SERVER_NAME,
-    description=SERVER_DESCRIPTION,
-    dependencies=SERVER_DEPENDENCIES,
-    version=SERVER_VERSION
-)
+mcp = FastMCP(SERVER_NAME)
 
 register_model_tools(mcp)
 register_generation_tools(mcp)
