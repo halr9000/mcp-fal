@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-fal"
+version = "0.1.0"
+description = "A Model Context Protocol (MCP) server for interacting with fal.ai models and services."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "halr9000" }
+]
+keywords = ["mcp", "fal.ai", "ai", "image-generation", "video-generation]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "fastmcp",
+  "httpx>=0.25",
+  "aiofiles>=23.0.0",
+]
+
+[project.scripts]
+# Console entrypoint for running the server
+mcp-fal = "main:main"
+
+[tool.uv]
+# Optional: declare dev dependencies and settings here
+# dev-dependencies = ["ruff", "pytest"]
+
+[tool.uv.scripts]
+# Helpful script aliases for development and running
+# Launch MCP Inspector with hot reload using fastmcp
+inspect = "fastmcp dev main.py"
+# Install into Claude Desktop (example, ensures env var can be passed)
+install-claude = "fastmcp install main.py"
+# Run via the console script entrypoint
+run = "mcp-fal"
