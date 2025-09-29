@@ -12,7 +12,7 @@ license = { file = "LICENSE" }
 authors = [
   { name = "halr9000" }
 ]
-keywords = ["mcp", "fal.ai", "ai", "image-generation", "video-generation]
+keywords = ["mcp", "fal.ai", "ai", "image-generation", "video-generation"]
 classifiers = [
   "Programming Language :: Python :: 3",
   "License :: OSI Approved :: MIT License",
